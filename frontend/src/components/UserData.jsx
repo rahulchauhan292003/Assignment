@@ -1,45 +1,46 @@
 import React from 'react';
 import { DiAptana } from "react-icons/di";
 import { ImCross } from "react-icons/im";
+import Pagination from '@mui/material/Pagination';
 
 
 const UserData = () => {
   const users = [
     {
       id: 1,
-      name: ' Holz',
-      dateCreated: '04/10/2013',
+      name: 'Santa',
+      dateCreated: '04/12/2024',
       role: 'Admin',
       status: 'Active',
-      avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+      avatar: 'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',
     },
     {
       id: 2,
-      name: 'Paula Wilson',
-      dateCreated: '05/08/2014',
+      name: 'Suneel Sharma',
+      dateCreated: '23/08/2024',
       role: 'Publisher',
       status: 'Active',
-      avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+      avatar: 'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png',
     },
     {
       id: 3,
-      name: 'Antonio Moreno',
-      dateCreated: '11/05/2015',
+      name: 'Harsh Mehta',
+      dateCreated: '15/05/2024',
       role: 'Publisher',
       status: 'Suspended',
-      avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
+      avatar: 'https://photosnow.org/wp-content/uploads/2024/04/whatsapp-dp-80.jpg',
     },
     {
       id: 4,
-      name: 'Mary Saveley',
-      dateCreated: '06/09/2016',
+      name: 'Devesh kumar',
+      dateCreated: '06/12/2024',
       role: 'Reviewer',
       status: 'Active',
-      avatar: 'https://randomuser.me/api/portraits/women/4.jpg',
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSegouWjeS9e1_fACuI4oWxW2zWaAXxYKJMOg&s',
     },
     {
       id: 5,
-      name: 'Martin Sommer',
+      name: ' Akash Kumar',
       dateCreated: '12/08/2017',
       role: 'Moderator',
       status: 'Inactive',
@@ -99,6 +100,10 @@ const UserData = () => {
           ))}
         </tbody>
       </table>
+      <div className='p-3 ml-[730px] mt-4'>
+      <Pagination count={10} color="primary" />
+      </div>
+     
     </div>
   );
 };

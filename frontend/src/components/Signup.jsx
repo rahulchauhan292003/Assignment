@@ -2,8 +2,10 @@ import { Formik, ErrorMessage, Form } from "formik";
 import React from "react";
 import { validateSchema } from "./Schema";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate()
   const handleSubmit = async (values) => {
     // console.log("form data", values);
     try {
@@ -17,7 +19,9 @@ const Signup = () => {
         }
       );
       console.log("Added user", response);
-      alert("User Added");
+      alert("SignUp Success");
+      navigate('/login')
+
     } catch (error) {
       console.log(error);
     }
@@ -97,6 +101,12 @@ const Signup = () => {
                 >
                   REGISTER
                 </button>
+                <Link to={"/login"}>
+                  {" "}
+                  <p className="text-center p-1 text-teal-400">
+                    Already have a account Login
+                  </p>
+                </Link>
               </div>
             </div>
           </Form>

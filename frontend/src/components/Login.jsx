@@ -2,7 +2,7 @@ import { Formik, Form, ErrorMessage } from "formik";
 import React from "react";
 import { LoginSchema } from "./LoginSchema";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,16 +18,17 @@ const Login = () => {
           password: values.password,
         }
       );
-      console.log("login", response);
+      console.log("login", response.data);
+      const token = response.data.Token
+      localStorage.setItem("authtoken",token)
       alert("Login success");
-      navigate("/home");
+      navigate("/userData");
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <>
-      {/* <div onClick={handleSubmit}>somethin </div> */}
       <Formik
         initialValues={{ username: "", password: "" }}
         validationSchema={LoginSchema}
@@ -90,6 +91,12 @@ const Login = () => {
                   >
                     LOGIN
                   </button>
+                  <Link>
+                    {" "}
+                    <p className="text-center p-1 text-teal-400">
+                      Don't have account Signup
+                    </p>
+                  </Link>
                 </div>
               </div>
             </Form>
